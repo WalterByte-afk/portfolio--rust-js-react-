@@ -18,16 +18,19 @@ const infoCards = [
     label: ">_ Stack",
     items: ["TypeScript", "React / Next.js", "Three.js / WebGL", "Rust / WASM"],
     position: "top-8 left-6 md:top-20 md:left-12" as const,
+    zIndex: 10,
   },
   {
     label: "[#] Focus",
     items: ["Creative Coding", "Performance Eng.", "Design Systems", "3D Experiences"],
-    position: "top-8 right-6 md:top-20 md:right-12" as const,
+    position: "top-20 right-6 md:top-20 md:right-12" as const,
+    zIndex: 11,
   },
   {
     label: "[~] Status",
     items: ["Available for work", "Remote-first", "Open to collaborate"],
-    position: "bottom-28 left-6 md:bottom-32 md:left-12" as const,
+    position: "bottom-40 left-6 md:bottom-32 md:left-12" as const,
+    zIndex: 12,
   },
 ]
 
@@ -61,7 +64,8 @@ export function BrainSection() {
       {infoCards.map((card) => (
         <div
           key={card.label}
-          className={`absolute ${card.position} z-10 glass-card rounded-lg p-5 max-w-[220px]`}
+          className={`absolute ${card.position} glass-card rounded-lg p-5 max-w-[220px] info-cards-hidden`}
+          style={{ zIndex: card.zIndex }}
         >
           <span
             className="block text-[10px] tracking-[0.2em] uppercase mb-3"

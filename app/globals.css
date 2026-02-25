@@ -204,3 +204,10 @@ canvas {
 .hero-text {
   contain: layout style paint;
 }
+
+/* Hide info cards on small screens (below 767px x 747px) */
+@media (max-width: 767px) and (max-height: 747px) {
+  .info-cards-hidden {
+    display: none;
+  }
+}
